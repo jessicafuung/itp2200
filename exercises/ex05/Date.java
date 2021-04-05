@@ -5,7 +5,7 @@ import java.time.Period;
 
 public class Date {
     LocalDate date;
-    public Date(){
+    public Date(int i){
         this.date = LocalDate.now();
     }
     public Date(int year, int month, int day){

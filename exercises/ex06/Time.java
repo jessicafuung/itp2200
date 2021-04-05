@@ -12,7 +12,10 @@ public class Time {
     }
 
     public Time (int seconds){
-        convertSeconds(seconds);
+        Time t = convertSeconds(seconds);
+        this.hours = t.hours;
+        this.minutes = t.minutes;
+        this.seconds = t.seconds;
     }
 
     public static Time convertSeconds(int seconds){
@@ -26,11 +29,12 @@ public class Time {
     }
     public static int durationInHours(Time t1, Time t2){
         // Add code to compute the difference between the two given time objects.
-        return t1.hours;
+        return Math.abs(t1.hours- t2.hours);
     }
 
-    public int durationInSeconds(Time t1, Time t2){
+    public static int durationInSeconds(Time t1, Time t2){  //statis for å bruke fra adnre kalsser uten å lage obj
         // Add code to compute the difference between the time stored in the current object and the time in the input.
-        return 0;
+        return Math.abs(t1.seconds- t2.seconds);
+
     }
 }

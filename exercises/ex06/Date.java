@@ -14,7 +14,13 @@ public class Date {
 
     public static int dayDiff(Date d1, Date d2){
             Period period = Period.between(d1.date, d2.date);
-            return period.getDays();
+            return Math.abs(period.getDays());
+            /*
+            if(period.getDays() < 0){
+            return -period.getDays();
+            }else {
+            return period.GetDays();
+             */
     }
 
     public static int daysSinceO(Date d){

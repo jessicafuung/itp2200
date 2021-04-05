@@ -2,6 +2,9 @@ package ex06;
 
 import ex06.Time;
 import org.junit.Test;
+
+import static ex06.Time.durationInHours;
+import static ex06.Time.durationInSeconds;
 import static org.junit.Assert.*;
 
 public class TimeTest {
@@ -20,4 +23,19 @@ public class TimeTest {
         assertTrue(t.hours == 1);
     }
 
+    @Test
+    public void durationInHoursTest() {
+        Time t1 = new Time(3, 2, 1 );
+        Time t2 = new Time(1, 0, 0);
+
+        assertEquals(2, durationInHours(t1, t2));
+    }
+
+    @Test
+    public void durationInSecondsTest() {
+        Time t1 = new Time(50);
+        Time t2 = new Time(45);
+
+        assertEquals(5, durationInSeconds(t1, t2));
+    }
 }

@@ -12,6 +12,7 @@ public class DateTest {
         Date d3 = new Date();
 
         //assertTrue(Date.dayDiff(d2, d3) == 0);
+        System.out.println(Date.dayDiff(d2, d1));
         assertTrue(Date.dayDiff(d2, d1) == 4);
     }
 }

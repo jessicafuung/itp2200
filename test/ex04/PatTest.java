@@ -14,41 +14,18 @@ public class PatTest {
         assertTrue(result != -1);
         //assertTrue( true ^ false); //Random XOR example
     }
+/*
+    @Test
+    public void testBitLongerPath(){
+        char[] subject = "a".toCharArray();
+        char[] pattern = "a".toCharArray();
 
+        int result = PatternMatcher.pat(subject, pattern);
+        assertTrue(result != -1);
+        //assertTrue( true ^ false); //Random XOR example
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+} */
 
 
     @Test

@@ -56,4 +56,70 @@ public class TriangleClassifierTest {
         String result = TriangleClassifier.classify(a, a, a);
         assertTrue(result.equalsIgnoreCase("EQUILATERAL"));
     }
+
+    //Tester for å dekke de resterende true-verdiene
+
+    @Test
+    public void testSecondClause() throws Exception{
+        int a = 5;
+        int b = 0;
+        int c = 5;
+
+        String result = TriangleClassifier.classify(a, b, c);
+        assertTrue(result.equalsIgnoreCase("NOT_A_TRIANGLE"));
+
+    }
+
+    @Test
+    public void testThirdClause() throws Exception{
+        int a = 8;
+        int b = 3;
+        int c = -2;
+
+        String result = TriangleClassifier.classify(a, b, c);
+        assertTrue(result.equalsIgnoreCase("NOT_A_TRIANGLE"));
+    }
+
+    @Test
+    public void testSecondMax() throws Exception{
+        int a = 8;
+        int b = 50;
+        int c = -2;
+
+        String result = TriangleClassifier.classify(a, b, c);
+        assertTrue(result.equalsIgnoreCase("NOT_A_TRIANGLE"));
+    }
+
+    @Test
+    public void testThirddMax() throws Exception{
+        int a = 8;
+        int b = 50;
+        int c = 200;
+
+        String result = TriangleClassifier.classify(a, b, c);
+        assertTrue(result.equalsIgnoreCase("NOT_A_TRIANGLE"));
+    }
+
+    @Test
+    public void testSecondIsosceles() throws Exception{
+        int a = 5;
+        int b = 6;
+        int c = 6;
+
+        String result = TriangleClassifier.classify(a, b, c);
+        assertTrue(result.equalsIgnoreCase("ISOSCELES"));
+        assertFalse(result.equalsIgnoreCase("SCALENE"));
+    }
+
+    @Test
+    public void testThirdIsosceles() throws Exception{
+        int a = 5;
+        int b = 6;
+        int c = 5;
+
+        String result = TriangleClassifier.classify(a, b, c);
+        assertTrue(result.equalsIgnoreCase("ISOSCELES"));
+        assertFalse(result.equalsIgnoreCase("SCALENE"));
+    }
 }
+

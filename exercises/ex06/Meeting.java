@@ -23,6 +23,11 @@ public class Meeting {
         this.time = new Time(hour, minute, 0);
     }
 
+    //Change meeting owner
+    public void setOwner(Person owner)
+        this.owner = owner;
+
+
 }
 
 
