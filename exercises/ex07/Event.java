@@ -1,9 +1,9 @@
 package ex07;
 
 public class Event {
-    private Date startDate;
-    private Date endDate;
-    private String name;
+    public Date startDate;
+    public Date endDate;
+    public String name;
 
     public Event(String name){
         this.name = name;
@@ -44,4 +44,6 @@ public class Event {
     public void setName(String name) {
         this.name = name;
     }
+
+    //Method for checking that endDate is after startDate
 }

@@ -1,15 +1,19 @@
-package ex06;
+package sem06;
+
+import ex06.Date;
+import ex06.Person;
+import ex06.Time;
 
 public class Meeting {
-    Person owner;
-    Date date;
-    Time time;
+    ex06.Person owner;
+    ex06.Date date;
+    ex06.Time time;
     int duration;
 
     public Meeting() {
     }
 
-    public Meeting(Person p, Date d, Time t){
+    public Meeting(Person p, ex06.Date d, ex06.Time t){
         this.owner = p;
         this.date = d;
         this.time = t;
@@ -25,9 +29,10 @@ public class Meeting {
 
     //Change meeting owner
     //public void setOwner(Person owner);
-      //  this.owner = owner;
+    //  this.owner = owner;
 
 
 }
+
 
 

@@ -8,9 +8,9 @@ import java.time.Period;
  * A DateTimeException will be thrown.
  */
 public class Date {
-    LocalDate date;
+    LocalDate date;             //Forhåndsimplementert java-klasse med metoder
     public Date(){
-            this.date = LocalDate.now();
+            this.date = LocalDate.now();        //Oppretter obj og bruker .now metoden
         }
     public Date(int year, int month, int day){
             this.date = LocalDate.of(year, month, day);
@@ -39,11 +39,34 @@ public class Date {
 
     public int monthsSince(Date d){
         Period period = Period.between(this.date, d.date);
-        return period.getMonths();
+        return Math.abs(period.getMonths());
+    }
+
+    public int monthsSince(){
+        Period period = Period.between(this.date, new Date().date);
+        return Math.abs(period.getMonths());
     }
 
     public int yearsSince(){
         Period period = Period.between(this.date, new Date().date);
         return Math.abs(period.getYears());
     }
+
+    public int yearsSince(Date d){
+        Period period = Period.between(this.date, d.date);
+        return Math.abs(period.getYears());
+    }
+
+    //Method to check if some date is after another
+    public boolean isAfter(Date d){  //Tar en "Date" som input (d=ref), boolean = gir kun true/ false verdier
+        if(date.isAfter(d.date))    //.isAfter er metode tilhørende LocalDate. Hvis dato er etter..(dato-obj)
+            return true;               //Hvis det er sant = returner true;
+        else
+            return false;           //..Hvis ikke returner false;
+    }
+
+    public boolean isBefore(Date d){
+        return !isAfter(d);     //Tar inn isAfter-metoden sin date, men returner omvendt resultat
+    }
+
 }
